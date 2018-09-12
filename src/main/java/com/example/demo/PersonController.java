@@ -15,8 +15,8 @@ public class PersonController {
 
     @GetMapping("/{id}")
     Person readPerson(@PathVariable Long id) {
-        return this.repository.findById(id)
-                .orElseThrow(PersonNotFoundException::new);
+        return this.repository.findById(id).get();
+                //.orElseThrow(PersonNotFoundException::new);
     }
 
     @PostMapping
